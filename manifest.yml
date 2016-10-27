@@ -1,0 +1,24 @@
+---
+declared-services:
+  conversation-service:
+    label: conversation
+    plan: free
+  speech-to-text-service:
+    label: speech_to_text
+    plan: standard
+  text-to-speech-service:
+    label: text_to_speech
+    plan: standard
+applications:
+- name: AsesorBancaAna
+  command: npm start
+  path: .
+  memory: 256M
+  instances: 1
+  services:
+  - DemoBancaAsesor
+  - Speech To Text- DEMO BANCA
+  - Text to Speech- DEMO BANCA
+  env:
+    NPM_CONFIG_PRODUCTION: false
+    WORKSPACE_ID: cd9d50ba-02d3-43b3-b4fa-8d4648037c26
