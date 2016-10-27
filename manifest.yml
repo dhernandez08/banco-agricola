@@ -17,8 +17,8 @@ applications:
   instances: 1
   services:
   - Banco_Agricola_Conversation
-  - Speech To Text-BancoAgricola
-  - Text to Speech-BancoAgricola
+  - S2T-BancoAgricola
+  - T2S-BancoAgricola
   env:
     NPM_CONFIG_PRODUCTION: false
     WORKSPACE_ID: 740d6f4a-70d0-45f8-ba52-73e2b25f1c9c
