@@ -10,15 +10,15 @@ declared-services:
     label: text_to_speech
     plan: standard
 applications:
-- name: AsesorBancaAna
+- name: dialogo-banco-agricola
   command: npm start
   path: .
   memory: 256M
   instances: 1
   services:
-  - DemoBancaAsesor
-  - Speech To Text- DEMO BANCA
-  - Text to Speech- DEMO BANCA
+  - Banco_Agricola_Conversation
+  - Speech To Text- BancoAgricola
+  - Text to Speech- BancoAgricola
   env:
     NPM_CONFIG_PRODUCTION: false
-    WORKSPACE_ID: cd9d50ba-02d3-43b3-b4fa-8d4648037c26
+    WORKSPACE_ID: 740d6f4a-70d0-45f8-ba52-73e2b25f1c9c
