@@ -77,13 +77,18 @@ var TTSModule = (function() {
             if (audio !== null && !audio.ended) {
               audio.pause();
             }
-            audio = WatsonSpeech.TextToSpeech.synthesize({
-              text: newPayload.output.text, // Output text/response
-              //voice: 'en-US_MichaelVoice', // Default Watson voice
+             // Necesario para evitar mala pronunciacion de signos .;?!
+            var textv ='';
+              
+            for(var i = 0; i < newPayload.output.text.length; i++){
+              textv += newPayload.output.text[i] + ' ';
+            }
+              audio = WatsonSpeech.TextToSpeech.synthesize({
+              text:textv,
               voice: 'es-US_SofiaVoice',
               autoPlay: true, // Automatically plays audio
               token: token
-            });
+              });     
             // When the audio stops playing
             audio.onended = function() {
               allowSTT(payload); // Check if user wants to use STT
